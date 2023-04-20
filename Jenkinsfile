@@ -1,5 +1,5 @@
 node {
-    def WORKSPACE = "/var/lib/jenkins/workspace/springboot-deploy"
+    def WORKSPACE = "/var/lib/jenkins/workspace/springboot-demo-deploy"
     def dockerImageTag = "springboot-deploy${env.BUILD_NUMBER}"
 
     try{
@@ -8,7 +8,7 @@ node {
             // for display purposes
             // Get some code from a GitHub repository
             git url: 'https://github.com/karishmatayal25/springboot-demodeploy',
-                credentialsId: 'springdeploy-user',
+                credentialsId: 'karishmatayal25',
                 branch: 'main'
          }
           stage('Build docker') {
