@@ -15,7 +15,7 @@ FROM adoptopenjdk/openjdk11:latest
 
 COPY --from=build /opt/app/target/*.jar app.jar
 
-ENV PORT 8081
+ENV PORT 8089
 EXPOSE $PORT
 
 ENTRYPOINT ["java","-jar","-Xmx1024M","-Dserver.port=${PORT}","app.jar"]
