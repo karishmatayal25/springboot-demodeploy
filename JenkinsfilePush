@@ -3,7 +3,7 @@ pipeline{
 	agent any
 
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('DockerHub')
+		DOCKERHUB_CREDENTIALS=credentials('Nagarro_POC_DockerHub')
 	}
 
 	stages {
@@ -11,7 +11,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t karishmatayal25/springboot-deploy:latest .'
+				sh 'docker build -t springboot-deploy:latest .'
 			}
 		}
 
@@ -25,7 +25,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push karishmatayal25/springboot-deploy:latest'
+				sh 'docker push springboot-deploy:latest'
 			}
 		}
 	}
