@@ -11,7 +11,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t springboot-deploy:latest .'
+				sh 'docker build -t nagarropoc/springboot-deploy:latest .'
 			}
 		}
 
@@ -25,7 +25,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push springboot-deploy:latest'
+				sh 'docker push nagarropoc/springboot-deploy:latest'
 			}
 		}
 	}
